@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todoit</title>
+    <link rel="stylesheet" href="css/main.css" />
+
+</head>
+
+<body>
+    <h1 class="title">Todoit</h1>
+
+    <!--backgroundColour switcher-->
+
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="toggle" />
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <!--settings button-->
+    <button id="settings-btn">
+        <img src="/media/gear.png" alt="settings" width="24" height="24">
+    </button>
+
+    <div id="settings-popup" hidden>
+        <h2>Settings</h2>
+        <ul>
+            <label for="delete-profile">
+                <input type="checkbox" id="delete-profile" />
+                <span>Delete Profile</span>
+            </label>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+    <!--time and date-->
+    <div id="date-time">
+        <p id="date"></p>
+        <p id="time"></p>
+    </div>
+
+    <!--tasks-->
+    <div class="all-tasks">
+        <h2 class="task-list-title">Lists</h2>
+        <ul class="task-list" lists-data-container></ul>
+
+        <form action="" new-list>
+            <input type="text" class="new list" new-list-data-input placeholder="New list name" aria-label="new list name" />
+            <button type="button" class="btn create" aria-label="Create new list">
+                +
+            </button>
+        </form>
+    </div>
+
+    <div class="todo-list" list-display-data-container>
+        <div class="todo-header">
+            <h2 class="list-title" title-list>Shopping</h2>
+            <p class="task-count" count-list>4 tasks remaining</p>
+        </div>
+
+        <div class="todo-body">
+            <div class="tasks" tasks-data></div>
+
+            <div class="new-task-creator">
+                <form action="" new-form-data-task>
+                    <input type="text" new-input-task-data class="new task" placeholder="new task name" aria-label="New task name" />
+                    <button type="button" class="btn create" aria-label="create new task">
+                        +
+                    </button>
+                </form>
+            </div>
+
+            <div class="delete-stuff">
+                <button type="button" class="btn delete" btn-clear-complete-tasks>
+                    Delete Tasks
+                </button>
+                <button type="button" class="btn delete" delete-list>
+                    Delete List
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <template id="template-task">
+        <div class="task">
+            <input type="checkbox" />
+            <label>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
+    <script defer src="script.js"></script>
+</body>
+
+</html>
